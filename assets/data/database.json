@@ -1,0 +1,121 @@
+{
+  "imoveis": [
+    {
+      "id": "imovel_001",
+      "titulo": "Apartamento Moderno em Copacabana",
+      "descricao": "Lindo apartamento com vista para o mar, 2 quartos, sala ampla, cozinha equipada e varanda. Localizado a 2 minutos da praia de Copacabana.",
+      "endereco": "Rua Barata Ribeiro, 450 - Copacabana, Rio de Janeiro - RJ",
+      "precoPorNoite": 280,
+      "capacidadeMaxima": 4,
+      "proprietarioId": "prop_001"
+    },
+    {
+      "id": "imovel_002",
+      "titulo": "Casa de Praia em Salvador",
+      "descricao": "Casa aconchegante na Barra, 3 quartos, piscina, churrasqueira e área gourmet. Perfeita para famílias e grupos de amigos.",
+      "endereco": "Rua da Paciência, 123 - Barra, Salvador - BA",
+      "precoPorNoite": 350,
+      "capacidadeMaxima": 8,
+      "proprietarioId": "prop_002"
+    },
+    {
+      "id": "imovel_003",
+      "titulo": "Loft no Centro de São Paulo",
+      "descricao": "Loft moderno e bem localizado no centro histórico de SP. Próximo ao metrô, teatros e restaurantes. Ideal para executivos.",
+      "endereco": "Rua do Triângulo, 789 - Centro, São Paulo - SP",
+      "precoPorNoite": 180,
+      "capacidadeMaxima": 2,
+      "proprietarioId": "prop_003"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "prop_001",
+      "nome": "Maria Silva Santos",
+      "email": "maria.santos@email.com",
+      "telefone": "(21) 99999-1111",
+      "imoveis": ["imovel_001"]
+    },
+    {
+      "id": "prop_002",
+      "nome": "Carlos Eduardo Oliveira",
+      "email": "carlos.oliveira@email.com",
+      "telefone": "(71) 99999-2222",
+      "imoveis": ["imovel_002"]
+    },
+    {
+      "id": "prop_003",
+      "nome": "Ana Paula Costa",
+      "email": "ana.costa@email.com",
+      "telefone": "(11) 99999-3333",
+      "imoveis": ["imovel_003"]
+    },
+    {
+      "id": "hosp_001",
+      "nome": "João Pedro Ferreira",
+      "email": "joao.ferreira@email.com",
+      "telefone": "(11) 88888-1111",
+      "reservas": ["reserva_001", "reserva_003"]
+    },
+    {
+      "id": "hosp_002",
+      "nome": "Patricia Alves Lima",
+      "email": "patricia.lima@email.com",
+      "telefone": "(21) 88888-2222",
+      "reservas": ["reserva_002"]
+    }
+  ],
+  "reservas": [
+    {
+      "id": "reserva_001",
+      "imovelId": "imovel_001",
+      "hospedeId": "hosp_001",
+      "dataCheckIn": "2025-07-15",
+      "dataCheckOut": "2025-07-18",
+      "numeroHospedes": 2,
+      "valorTotal": 840,
+      "status": "confirmada",
+      "dataCriacao": "2025-06-01"
+    },
+    {
+      "id": "reserva_002",
+      "imovelId": "imovel_002",
+      "hospedeId": "hosp_002",
+      "dataCheckIn": "2025-08-10",
+      "dataCheckOut": "2025-08-15",
+      "numeroHospedes": 6,
+      "valorTotal": 1750,
+      "status": "pendente",
+      "dataCriacao": "2025-06-05"
+    },
+    {
+      "id": "reserva_003",
+      "imovelId": "imovel_003",
+      "hospedeId": "hosp_001",
+      "dataCheckIn": "2025-06-20",
+      "dataCheckOut": "2025-06-22",
+      "numeroHospedes": 1,
+      "valorTotal": 360,
+      "status": "finalizada",
+      "dataCriacao": "2025-05-28"
+    }
+  ],
+  "pagamentos": [
+    {
+      "id": "pag_1",
+      "reservaId": "reserva_001",
+      "valor": 840,
+      "metodoPagamento": "Stripe",
+      "status": "pago",
+      "dataPagamento": "2025-06-02"
+    },
+    {
+      "id": "pag_2",
+      "reservaId": "reserva_003",
+      "valor": 360,
+      "metodoPagamento": "PayPal",
+      "status": "pago",
+      "dataPagamento": "2025-05-29"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "transactions": [
+    {
+      "charge_id": "ch_3N8K7mLkdIwHu7ix0B3tJ28U",
+      "amount_cents": 150000,
+      "currency": "brl",
+      "status": "succeeded",
+      "payment_method": "card",
+      "created_timestamp": 1687123456,
+      "paid": true,
+      "description": "Pagamento de reserva de imóvel",
+      "customer": {
+        "id": "cus_NffrFeUfNV2Hib",
+        "email": "cliente@example.com"
+      }
+    },
+    {
+      "charge_id": "ch_3N8K8nLkdIwHu7ix0B4tJ29V",
+      "amount_cents": 75000,
+      "currency": "brl",
+      "status": "failed",
+      "payment_method": "card",
+      "created_timestamp": 1687123500,
+      "paid": false,
+      "description": "Pagamento de reserva de imóvel",
+      "failure_code": "card_declined"
+    },
+    {
+      "charge_id": "ch_3N8K9oLkdIwHu7ix0B5tJ30W",
+      "amount_cents": 230000,
+      "currency": "brl",
+      "status": "succeeded",
+      "payment_method": "pix",
+      "created_timestamp": 1687123600,
+      "paid": true,
+      "description": "Pagamento de reserva de imóvel"
+    }
+  ]
+}
