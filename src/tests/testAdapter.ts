@@ -43,7 +43,7 @@ async function testAdapter() {
     console.log("\n🔄 Testando metodo de pagamento invalido...");
     console.log("\n--- 3. Tentando metodo inexistente (deve falhar) ---");
 
-    await sistema.processarPagamento(reserva.id, "bitcoin");
+    await sistema.processarPagamento(reserva.id, "bitcoin" as any);
 
     console.log("Dados foram lidos de arquivos JSON (Stripe) e XML (PayPal).");
   }

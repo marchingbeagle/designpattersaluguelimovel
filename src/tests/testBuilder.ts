@@ -19,9 +19,9 @@ async function testBuilder() {
 
   if (novaReserva) {
     console.log("\n✅ Reserva criada com sucesso usando Builder Pattern!");
-    console.log(ID da reserva: ${novaReserva.id});
-    console.log(Status inicial: ${novaReserva.status});
-    console.log(Valor total: R$ ${novaReserva.valorTotal.toFixed(2)});
+    console.log(`ID da reserva: ${novaReserva.id}`);
+    console.log(`Status inicial: ${novaReserva.status}`);
+    console.log(`Valor total: R$ ${novaReserva.valorTotal.toFixed(2)}`);
 
     console.log("\n📋 Detalhes da reserva criada:");
     sistema.mostrarDetalhesReserva(novaReserva.id);

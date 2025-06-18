@@ -11,23 +11,23 @@ export abstract class EstadoReserva {
 
 export class EstadoPendente extends EstadoReserva {
   confirmar(reserva: Reserva): void {
-    console.log(Reserva ${reserva.id} foi confirmada!);
+    console.log(`Reserva ${reserva.id} foi confirmada!`);
     reserva.status = StatusReserva.CONFIRMADA;
   }
 
   cancelar(reserva: Reserva): void {
-    console.log(Reserva ${reserva.id} foi cancelada.);
+    console.log(`Reserva ${reserva.id} foi cancelada.`);
     reserva.status = StatusReserva.CANCELADA;
   }
 
   iniciarEstadia(reserva: Reserva): void {
     console.log(
-      Nao e possivel iniciar estadia - reserva ainda esta pendente.
+      "Nao e possivel iniciar estadia - reserva ainda esta pendente."
     );
   }
 
   finalizar(reserva: Reserva): void {
-    console.log(Nao e possivel finalizar - reserva ainda esta pendente.);
+    console.log("Nao e possivel finalizar - reserva ainda esta pendente.");
   }
 
   obterStatus(): StatusReserva {
@@ -41,21 +41,21 @@ export class EstadoPendente extends EstadoReserva {
 
 export class EstadoConfirmada extends EstadoReserva {
   confirmar(reserva: Reserva): void {
-    console.log(Reserva ${reserva.id} ja esta confirmada.);
+    console.log(`Reserva ${reserva.id} ja esta confirmada.`);
   }
 
   cancelar(reserva: Reserva): void {
-    console.log(Reserva ${reserva.id} foi cancelada.);
+    console.log(`Reserva ${reserva.id} foi cancelada.`);
     reserva.status = StatusReserva.CANCELADA;
   }
 
   iniciarEstadia(reserva: Reserva): void {
-    console.log(Estadia da reserva ${reserva.id} foi iniciada!);
+    console.log(`Estadia da reserva ${reserva.id} foi iniciada!`);
     reserva.status = StatusReserva.EM_ANDAMENTO;
   }
 
   finalizar(reserva: Reserva): void {
-    console.log(Nao e possivel finalizar - a estadia ainda nao foi iniciada.);
+    console.log("Nao e possivel finalizar - a estadia ainda nao foi iniciada.");
   }
 
   obterStatus(): StatusReserva {
@@ -69,19 +69,19 @@ export class EstadoConfirmada extends EstadoReserva {
 
 export class EstadoCancelada extends EstadoReserva {
   confirmar(reserva: Reserva): void {
-    console.log(Nao e possivel confirmar - reserva foi cancelada.);
+    console.log("Nao e possivel confirmar - reserva foi cancelada.");
   }
 
   cancelar(reserva: Reserva): void {
-    console.log(Reserva ${reserva.id} ja esta cancelada.);
+    console.log(`Reserva ${reserva.id} ja esta cancelada.`);
   }
 
   iniciarEstadia(reserva: Reserva): void {
-    console.log(Nao e possivel iniciar estadia - reserva foi cancelada.);
+    console.log("Nao e possivel iniciar estadia - reserva foi cancelada.");
   }
 
   finalizar(reserva: Reserva): void {
-    console.log(Nao e possivel finalizar - reserva foi cancelada.);
+    console.log("Nao e possivel finalizar - reserva foi cancelada.");
   }
 
   obterStatus(): StatusReserva {
@@ -95,19 +95,19 @@ export class EstadoCancelada extends EstadoReserva {
 
 export class EstadoEmAndamento extends EstadoReserva {
   confirmar(reserva: Reserva): void {
-    console.log(Reserva ${reserva.id} ja esta em andamento.);
+    console.log(`Reserva ${reserva.id} ja esta em andamento.`);
   }
 
   cancelar(reserva: Reserva): void {
-    console.log(Nao e possivel cancelar - estadia ja esta em andamento.);
+    console.log("Nao e possivel cancelar - estadia ja esta em andamento.");
   }
 
   iniciarEstadia(reserva: Reserva): void {
-    console.log(Estadia da reserva ${reserva.id} ja esta em andamento.);
+    console.log(`Estadia da reserva ${reserva.id} ja esta em andamento.`);
   }
 
   finalizar(reserva: Reserva): void {
-    console.log(Estadia da reserva ${reserva.id} foi finalizada!);
+    console.log(`Estadia da reserva ${reserva.id} foi finalizada!`);
     reserva.status = StatusReserva.FINALIZADA;
   }
 
@@ -122,19 +122,19 @@ export class EstadoEmAndamento extends EstadoReserva {
 
 export class EstadoFinalizada extends EstadoReserva {
   confirmar(reserva: Reserva): void {
-    console.log(Reserva ${reserva.id} ja foi finalizada.);
+    console.log(`Reserva ${reserva.id} ja foi finalizada.`);
   }
 
   cancelar(reserva: Reserva): void {
-    console.log(Nao e possivel cancelar - reserva ja foi finalizada.);
+    console.log("Nao e possivel cancelar - reserva ja foi finalizada.");
   }
 
   iniciarEstadia(reserva: Reserva): void {
-    console.log(Nao e possivel iniciar estadia - reserva ja foi finalizada.);
+    console.log("Nao e possivel iniciar estadia - reserva ja foi finalizada.");
   }
 
   finalizar(reserva: Reserva): void {
-    console.log(Reserva ${reserva.id} ja foi finalizada.);
+    console.log(`Reserva ${reserva.id} ja foi finalizada.`);
   }
 
   obterStatus(): StatusReserva {
@@ -162,7 +162,7 @@ export class GerenciadorEstadoReserva {
   obterEstado(status: StatusReserva): EstadoReserva {
     const estado = this.estados.get(status);
     if (!estado) {
-      throw new Error(Estado ${status} não encontrado);
+      throw new Error(`Estado ${status} não encontrado`);
     }
     return estado;
   }
